@@ -405,7 +405,11 @@ function getFalsyValuesCount(arr) {
  *                              [0,0,0,0,1]]
  */
 function getIdentityMatrix(n) {
-  return Array.from({ length: n }, (_, i) => Array(n).fill(0).with(i, 1));
+  return Array.from({ length: n }, (_, i) =>
+    Array(n)
+      .fill(0)
+      .map((elem, index) => (index === i ? 1 : elem))
+  );
 }
 
 /**
